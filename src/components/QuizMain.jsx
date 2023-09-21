@@ -1,31 +1,51 @@
 import React, { useState } from "react";
 import "./quiz.css";
-import {
-  Box,
-  Button,
-  Center,
-  Divider,
-  Radio,
-  RadioGroup,
-  Text,
-} from "@chakra-ui/react";
-import { htmlQues } from "../constants/constant";
-const QuizMain = () => {
+import { Box, Divider, Radio, RadioGroup, Text } from "@chakra-ui/react";
+import { cssQuest, htmlQues, jsQuest } from "../constants/constant";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+const QuizMain = ({ topic }) => {
+  console.log(topic);
   const [value, setValue] = React.useState(null);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [result, setResult] = useState(0);
+  const whichTopic =
+    topic === "html"
+      ? htmlQues
+      : topic === "CSS"
+      ? cssQuest
+      : topic === "JS"
+      ? jsQuest
+      : null;
   // console.log(value);
   // console.log(question);
   const mainFunc = () => {
-    if (htmlQues[questionNumber].correctAns === value) {
-      setResult(result + 1);
+    if (value === null) {
+      toast.error("Please select any option first", {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    } else {
+      if (whichTopic[questionNumber].correctAns === value) {
+        setResult(result + 1);
+      }
+      setValue(null);
+      setQuestionNumber(questionNumber + 1);
     }
-    setValue(null)
-    setQuestionNumber(questionNumber + 1);
   };
 
-  if (questionNumber >= htmlQues.length) {
-    return <div className="result"><h2>Your Result Is: {result}</h2></div>; // Optionally handle end of quiz
+  if (questionNumber >= whichTopic.length) {
+    return (
+      <div className="result">
+        <h2>Your Result Is: {result}</h2>
+      </div>
+    ); // Optionally handle end of quiz
   }
   return (
     <body>
@@ -33,7 +53,7 @@ const QuizMain = () => {
         <h1>Quiz App</h1>
         <Divider />
         <Text my={5} fontSize={"2xl"} fontWeight={"semibold"}>
-          Q{questionNumber + 1}: {htmlQues[questionNumber].quest}
+          Q{questionNumber + 1}: {whichTopic[questionNumber].quest}
         </Text>
         <Box>
           <RadioGroup
@@ -45,25 +65,32 @@ const QuizMain = () => {
             value={value}
           >
             <Radio value="opt1" isChecked={false}>
-              {htmlQues[questionNumber].opt1}
+              {whichTopic[questionNumber].opt1}
             </Radio>
             <Radio value="opt2" isChecked={false}>
-              {htmlQues[questionNumber].opt2}
+              {whichTopic[questionNumber].opt2}
             </Radio>
             <Radio value="opt3" isChecked={false}>
-              {htmlQues[questionNumber].opt3}
+              {whichTopic[questionNumber].opt3}
             </Radio>
             <Radio value="opt4" isChecked={false}>
-              {htmlQues[questionNumber].opt4}
+              {whichTopic[questionNumber].opt4}
             </Radio>
           </RadioGroup>
         </Box>
-        <Center position={"relative"} bottom={4}>
-          <Button w={"100%"} onClick={() => mainFunc()}>
+        <div className="next-button-parent">
+          <button onClick={() => mainFunc()}>Next</button>
+        </div>
+        {/* <Center>
+          <Button
+            onClick={() => mainFunc()}
+            className="next-button"
+          >
             Next
           </Button>
-        </Center>
+        </Center> */}
       </div>
+      <ToastContainer />
     </body>
   );
 };
