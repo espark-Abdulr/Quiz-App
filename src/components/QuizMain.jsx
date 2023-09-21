@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./quiz.css";
 import { Box, Divider, Radio, RadioGroup, Text } from "@chakra-ui/react";
-import { cssQuest, htmlQues, jsQuest } from "../constants/constant";
+import { cssQuest, htmlQues, jsQuest, reactQuest } from "../constants/constant";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const QuizMain = ({ topic }) => {
@@ -16,6 +16,8 @@ const QuizMain = ({ topic }) => {
       ? cssQuest
       : topic === "JS"
       ? jsQuest
+      : topic === "REACT"
+      ? reactQuest
       : null;
   // console.log(value);
   // console.log(question);

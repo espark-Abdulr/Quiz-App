@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Text } from "@chakra-ui/react";
+import { Box, Button, Stack, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import QuizMain from "./QuizMain";
 
@@ -12,7 +12,7 @@ const Options = () => {
             Choose Your Topic For Quiz
           </Text>
           <br />
-          <ButtonGroup variant="outline" spacing="6">
+          <Stack direction={"row"} spacing="6">
             <Button
               bg={"#F16524"}
               color={"white"}
@@ -37,7 +37,17 @@ const Options = () => {
             >
               JavaScript
             </Button>
-          </ButtonGroup>
+          </Stack>
+          <Stack mt={10}>
+            <Button
+              bg={"#00DFFC"}
+              color={"white"}
+              _hover={{ backgroundColor: "#00DFFC" }}
+              onClick={() => setTopic("REACT")}
+            >
+              REACTJS
+            </Button>
+          </Stack>
         </Box>
       ) : (
         <>

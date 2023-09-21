@@ -377,3 +377,132 @@ export const jsQuest = [
     correctAns: "opt1",
   },
 ];
+
+export const reactQuest = [
+  {
+    quest: "What is React.js primarily used for?",
+    opt1: "Building mobile applications",
+    opt2: "Creating server-side applications",
+    opt3: "Building user interfaces",
+    opt4: "Managing databases",
+    correctAns: "opt3",
+  },
+  {
+    quest:
+      "Which of the following is NOT a valid way to create a React component?",
+    opt1: "Class Component",
+    opt2: "Functional Component",
+    opt3: "Component Function",
+    opt4: "Component Class",
+    correctAns: "opt3",
+  },
+  {
+    quest:
+      "In React, how can you pass data from a parent component to a child component?",
+    opt1: "Using the 'parentData' attribute",
+    opt2: "Using the 'sendData' method",
+    opt3: "Using props",
+    opt4: "Using state",
+    correctAns: "opt3",
+  },
+  {
+    quest: "What is JSX in React?",
+    opt1: "A JavaScript library",
+    opt2: "A templating engine",
+    opt3: "A syntax extension for JavaScript",
+    opt4: "A state management tool",
+    correctAns: "opt3",
+  },
+  {
+    quest:
+      "Which lifecycle method is used for fetching data in a class component?",
+    opt1: "componentDidMount",
+    opt2: "componentWillUnmount",
+    opt3: "componentUpdate",
+    opt4: "componentDidFetch",
+    correctAns: "opt1",
+  },
+  {
+    quest: "What is the virtual DOM in React?",
+    opt1: "An alternative to HTML",
+    opt2: "A representation of the actual DOM in memory",
+    opt3: "A part of the Redux library",
+    opt4: "A server-side rendering technique",
+    correctAns: "opt2",
+  },
+  {
+    quest: "What is the purpose of the 'useState' hook in React?",
+    opt1: "To fetch data from an API",
+    opt2: "To manage state in functional components",
+    opt3: "To define a new component",
+    opt4: "To create reusable components",
+    correctAns: "opt2",
+  },
+  {
+    quest:
+      "Which of the following is NOT a valid React component lifecycle method?",
+    opt1: "componentDidMount",
+    opt2: "componentWillUnmount",
+    opt3: "componentShouldRender",
+    opt4: "componentDidUpdate",
+    correctAns: "opt3",
+  },
+  {
+    quest: "What is React Router used for?",
+    opt1: "Handling AJAX requests",
+    opt2: "Managing component state",
+    opt3: "Creating navigation in React applications",
+    opt4: "Styling React components",
+    correctAns: "opt3",
+  },
+  {
+    quest: "What is the purpose of the 'key' prop in React lists?",
+    opt1: "To specify the data type of list elements",
+    opt2: "To uniquely identify list items and optimize rendering",
+    opt3: "To control the styling of list items",
+    opt4: "To define the list length",
+    correctAns: "opt2",
+  },
+  {
+    quest: "What is the purpose of the 'render' method in a class component?",
+    opt1: "To update component state",
+    opt2: "To define the component's structure and UI",
+    opt3: "To perform asynchronous operations",
+    opt4: "To remove the component from the DOM",
+    correctAns: "opt2",
+  },
+  {
+    quest:
+      "In React, what is the significance of the 'key' prop in mapping over an array of elements?",
+    opt1: "It defines the color of the elements",
+    opt2: "It specifies the index of the elements in the array",
+    opt3: "It helps React identify which items have changed, been added, or removed efficiently",
+    opt4: "It determines the size of the array",
+    correctAns: "opt3",
+  },
+  {
+    quest: "What is React's Context API used for?",
+    opt1: "Managing component state",
+    opt2: "Creating reusable components",
+    opt3: "Handling user authentication",
+    opt4: "Passing data through the component tree without having to pass props manually",
+    correctAns: "opt4",
+  },
+  {
+    quest: "What does Redux offer in a React application?",
+    opt1: "A centralized state management system",
+    opt2: "A routing solution",
+    opt3: "A way to create functional components",
+    opt4: "A form validation library",
+    correctAns: "opt1",
+  },
+  {
+    quest:
+      "What is the purpose of the 'componentDidUpdate' lifecycle method in a class component?",
+    opt1: "To initialize component state",
+    opt2: "To perform cleanup when the component unmounts",
+    opt3: "To update the component's state based on props or other changes",
+    opt4: "To render the initial UI of the component",
+    correctAns: "opt3",
+  },
+];
